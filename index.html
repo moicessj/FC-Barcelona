@@ -32,7 +32,14 @@
       color: #130036;
       border: 1px solid rgba(22, 2, 61, 0.3);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      width: 35%;
+      width: 100%;             /* Ocupa todo el ancho en celulares */
+      max-width: 600px;        /* Evita que crezca demasiado en pantallas grandes */
+      margin: 0 auto;          /* Lo centra automáticamente */
+      display: flex;           /* Activa flexbox */
+      flex-wrap: wrap;         /* Permite que los trofeos bajen ordenadamente si no caben */
+      justify-content: center; /* Los centra horizontalmente */
+      gap: 15px;               /* Espacio uniforme entre trofeo y trofeo */
+      align-items: center;
 
 
     }
@@ -536,7 +543,7 @@
       </div>
 
       <div
-        style="background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 12px; padding: 20px; color: #130036; border: 1px solid rgba(22, 2, 61, 0.3); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); width: 45%; margin: auto;">
+        style="background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 12px; padding: 20px; color: #130036; border: 1px solid rgba(22, 2, 61, 0.3); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); width: 100%; max-width: 600px; margin: auto; aspect-ratio: 16 / 9;">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/oG1ZTIDPk2s?si=SjgGyQBuFZdYscQo"
           title="YouTube video player" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

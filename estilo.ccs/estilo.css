@@ -229,18 +229,70 @@ nav {
     left: 0;
     width: 100%;
     background-image: url("../wallpaper.png");
-    z-index: 1000; /* Asegura que esté siempre por encima de todo */
+    z-index: 1000;
 }
+
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Cambia a 'flex-end' si los quieres a la derecha */
+    justify-content: center; /* Centrado perfecto en la PC */
     align-items: center;
     margin: 0;
-    padding: 15px 0;
+    padding: 12px 0;
 }
+
 nav li {
-    margin: 0 15px;
+    margin: 0 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+
+/* --- ESTILOS PARA TELÉFONO (Solo se activan en pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+    /* Forzamos al elemento nav a permitir el desbordamiento si es necesario */
+    nav {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* Hacemos que la lista sea una barra deslizante gigante y cómoda */
+    nav ul {
+        display: flex;
+        justify-content: flex-start !important; /* Forzamos que empiece desde la izquierda */
+        overflow-x: auto !important;            /* Habilita el desplazamiento horizontal */
+        overflow-y: hidden;
+        white-space: nowrap !important;         /* Evita que bajen de renglón */
+        -webkit-overflow-scrolling: touch;      /* Deslizamiento fluido en iOS y Android */
+        padding: 18px 10px !important;          /* Aumenta considerablemente el grosor/tamaño de la barra */
+        gap: 15px !important;                   /* Espacio amplio entre botones */
+        width: 100%;
+    }
+
+    /* Ocultamos la barra de desplazamiento para que se vea estético */
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav li {
+        margin: 0 !important;
+        flex-shrink: 0 !important;              /* Evita que los botones se encojan */
+    }
+
+    /* Botones mucho más grandes, altos y fáciles de presionar con el dedo */
+    nav li a {
+        display: inline-block !important;
+        font-size: 18px !important;             /* Texto grande y legible */
+        padding: 12px 22px !important;          /* Botones más rechonchos y grandes para el tacto */
+        background-color: rgba(0, 0, 0, 0.4);   /* Fondo más marcado para distinguirlo */
+        border-radius: 8px !important;
+    }
 }
 footer {
     width: 100%;
